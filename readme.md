@@ -1,11 +1,11 @@
 // README.md
-# Project Choice Golang Assignment
+# Go Import Export Excel CRUD
 
 ### Introduction
-Project Choice Golang Assignment is a Golang program to import data from an Excel file, store it into MySQL, and cache the data in Redis. Create a simple CRUD (Create, Read, Update, Delete) system to view imported data, edit records, and update the changes to
+Project Go Import Export Excel CRUD is a Golang program to import data from an Excel file, store it into MySQL, and cache the data in Redis. Create a simple CRUD (Create, Read, Update, Delete) system to view imported data, edit records, and update the changes to
 both the database and cache using a Gin Framework .
 
-### Project Choice Golang Assignment Features
+### Project Go Import Export Excel CRUD Features
 * Users can Upload Excel file which contains data employees data.
 * Users can View the data which was uploaded through Excel file.
 * Users can Update the data.
