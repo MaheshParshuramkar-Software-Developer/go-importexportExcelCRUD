@@ -1,0 +1,588 @@
+{
+	"info": {
+		"_postman_id": "9853daf9-1fae-439e-b4e3-082156fe5861",
+		"name": "Go-Excel-Assignment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26634386"
+	},
+	"item": [
+		{
+			"name": "ping",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/ping",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"ping"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "successEg",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/ping",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"ping"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 11 Nov 2024 05:10:16 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "18"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"pong\"\n}"
+				}
+			]
+		},
+		{
+			"name": "uploadData",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/mahesh4.p/Documents/Book1.xlsx"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/uploadData",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"uploadData"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "successEg",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/mahesh4.p/Documents/Book1.xlsx"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/uploadData",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"uploadData"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 11 Nov 2024 05:10:43 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "93"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"\",\n    \"result\": \"File uploaded successfully!  upload_900706378.xlsx\",\n    \"status\": \"success\"\n}"
+				},
+				{
+					"name": "invalidFileFormatEg",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/mahesh4.p/Documents/bash_aliases.text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/uploadData",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"uploadData"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 11 Nov 2024 05:11:24 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "137"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"Invalid file type. Only Excel sheets (xlsx, xlsm, xltm, xls) are allowed.\",\n    \"result\": \"failed to upload data\",\n    \"status\": \"failure\"\n}"
+				}
+			]
+		},
+		{
+			"name": "viewData",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/viewData",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"viewData"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "successEg",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/viewData",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"viewData"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 11 Nov 2024 05:12:10 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1140"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"\",\n    \"result\": [\n        {\n            \"Id\": 41,\n            \"FirstName\": \"Aleshia\",\n            \"LastName\": \"Tomkiewicz\",\n            \"Company\": \"\",\n            \"Address\": \"14 Taylor St\",\n            \"City\": \"St. Stephens Ward\",\n            \"Country\": \"Kent\",\n            \"Postal\": \"CT2 7PP\",\n            \"Phone\": \"01944-369967\",\n            \"Email\": \"atomkiewicz@hotmail.com\",\n            \"Web\": \"http://www.alandrosenburgcpapc.co.uk\"\n        },\n        {\n            \"Id\": 42,\n            \"FirstName\": \"Evan\",\n            \"LastName\": \"Zigomalas\",\n            \"Company\": \"Cap Gemini America\",\n            \"Address\": \"5 Binney St\",\n            \"City\": \"Abbey Ward\",\n            \"Country\": \"Buckinghamshire\",\n            \"Postal\": \"HP11 2AX\",\n            \"Phone\": \"01714-737668\",\n            \"Email\": \"evan.zigomalas@gmail.com\",\n            \"Web\": \"http://www.capgeminiamerica.co.uk\"\n        },\n        {\n            \"Id\": 43,\n            \"FirstName\": \"France\",\n            \"LastName\": \"Andrade\",\n            \"Company\": \"Elliott, John W Esq\",\n            \"Address\": \"8 Moor Place\",\n            \"City\": \"East Southbourne and Tuckton W\",\n            \"Country\": \"Bournemouth\",\n            \"Postal\": \"BH6 3BE\",\n            \"Phone\": \"01935-821636\",\n            \"Email\": \"france.andrade@hotmail.com\",\n            \"Web\": \"http://www.elliottjohnwesq.co.uk\"\n        },\n        {\n            \"Id\": 44,\n            \"FirstName\": \"Ulysses\",\n            \"LastName\": \"Mcwalters\",\n            \"Company\": \"Mcmahan, Ben L\",\n            \"Address\": \"505 Exeter Rd\",\n            \"City\": \"Hawerby cum Beesby\",\n            \"Country\": \"Lincolnshire\",\n            \"Postal\": \"DN36 5RP\",\n            \"Phone\": \"01302-601380\",\n            \"Email\": \"ulysses@hotmail.com\",\n            \"Web\": \"http://www.mcmahanbenl.co.uk\"\n        }\n    ],\n    \"status\": \"success\"\n}"
+				}
+			]
+		},
+		{
+			"name": "updateData",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    // \"first_name\":\"Mahesh\",\r\n    \"last_name\":\"Parshuramkar\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/updateData/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"updateData",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "successEg",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    // \"first_name\":\"Mahesh\",\r\n    \"last_name\":\"Parshuramkar\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/updateData/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"updateData",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 11 Nov 2024 05:12:52 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "57"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Result\": \"Data updated successfully\",\n    \"Status\": \"success\"\n}"
+				},
+				{
+					"name": "noRecordsFoundEg",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    // \"first_name\":\"Mahesh\",\r\n    \"last_name\":\"Parshuramkar\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/updateData/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"updateData",
+								"4"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 11 Nov 2024 05:13:08 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "86"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"no records to update\",\n    \"result\": \"failed to update record\",\n    \"status\": \"failure\"\n}"
+				}
+			]
+		},
+		{
+			"name": "deleteData",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/deleteData/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"deleteData",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "successEg",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/deleteData/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"deleteData",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 11 Nov 2024 05:14:32 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "70"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"\",\n    \"result\": \"record deleted successfully\",\n    \"status\": \"success\"\n}"
+				}
+			]
+		},
+		{
+			"name": "fileUploadedStatus",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"filename\":\"upload_2926752903.xlsx\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/fileUploadedStatus",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"fileUploadedStatus"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "successFullyuploadedEg",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"filename\":\"upload_2926752903.xlsx\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/fileUploadedStatus",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"fileUploadedStatus"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 11 Nov 2024 05:15:05 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "73"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"\",\n    \"result\": \"file was uploaded successfully\",\n    \"status\": \"success\"\n}"
+				},
+				{
+					"name": "norecordsFoundEg",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"filename\":\"upload_926752903.xlsx\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/fileUploadedStatus",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"fileUploadedStatus"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 11 Nov 2024 05:15:30 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "77"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"\",\n    \"result\": \"no records found for this filename\",\n    \"status\": \"failure\"\n}"
+				}
+			]
+		}
+	]
+}
